@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 abstract class Styles {
   static const TextStyle productRowItemName = TextStyle(
@@ -15,21 +16,25 @@ abstract class Styles {
 }
 
 abstract class IconClass {
-  static const Icon home = Icon(CupertinoIcons.home);
-  static const Icon search = Icon(CupertinoIcons.search);
-  static const Icon cart = Icon(CupertinoIcons.shopping_cart);
-  static const Icon profile = Icon(CupertinoIcons.profile_circled);
+  static const Icon home = Icon(Icons.home);
+  static const Icon workouts = Icon(Icons.fitness_center);
+  static const Icon activity = Icon(Icons.bar_chart_rounded);
+  static const Icon programs = Icon(Icons.menu_book_rounded);
 }
 
 abstract class TabBarLable {
-  static const String home = 'Home';
-  static const String search = 'Search';
-  static const String cart = 'Cart';
-  static const String profile = 'Profile';
+  static const String home = 'Ana Sayfa';
+  static const String workouts = 'Antrenmanlar';
+  static const String activity = 'Aktivite';
+  static const String programs = 'Programlar';
 }
 
 abstract class TabBarColors {
-  static const Color activeColor = CupertinoColors.systemRed;
+  static const Color activeColor = CupertinoColors.activeGreen;
+  static const Color backgroundColor = Color(0xFF004f32);
+  static const Color backgroundSecondaryColor = Color(0xFF79c141);
+  static const Color blackColor = Color(0xFF1d1d1d);
+  static const Color whiteColor = Color(0xFFf8f9fa);
   static const Color inActiveColor = CupertinoColors.inactiveGray;
 }
 
@@ -48,7 +53,6 @@ abstract class CustomPaddings {
       EdgeInsets.only(bottom: 16, left: 16);
   static const EdgeInsets onlyBottomRight =
       EdgeInsets.only(bottom: 16, right: 16);
-
 }
 
 abstract class SmallPaddings {
@@ -75,7 +79,7 @@ abstract class ResponsiveSize {
       MediaQueryData.fromWindow(WidgetsBinding.instance.window).size.width;
 }
 
-abstract class ResponsiveWidthHeightSizes{
+abstract class ResponsiveWidthHeightSizes {
   static double get height => ResponsiveSize.height;
   static double get width => ResponsiveSize.width;
   static double get heightHalf => ResponsiveSize.height / 2;
@@ -151,6 +155,6 @@ abstract class CustomTextStyles {
   static const TextStyle tertiaryTextStyle = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w400,
-    color: CupertinoColors.black,
+    color: CupertinoColors.white,
   );
 }

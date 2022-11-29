@@ -1,8 +1,8 @@
 import 'package:clean_arch_example/constants.dart';
-import 'package:clean_arch_example/view/cart_page.dart';
-import 'package:clean_arch_example/view/home_page.dart';
-import 'package:clean_arch_example/view/profile_page.dart';
-import 'package:clean_arch_example/view/search_page.dart';
+import 'package:clean_arch_example/view/activity/activity_page.dart';
+import 'package:clean_arch_example/view/home/home_page.dart';
+import 'package:clean_arch_example/view/programs/programs_page.dart';
+import 'package:clean_arch_example/view/workouts/workouts_page.dart';
 import 'package:flutter/cupertino.dart';
 
 class DashBoardPage extends StatelessWidget {
@@ -18,27 +18,31 @@ class DashBoardPage extends StatelessWidget {
             BottomNavigationBarItem(
                 icon: IconClass.home, label: TabBarLable.home),
             BottomNavigationBarItem(
-                icon: IconClass.search, label: TabBarLable.search),
+                icon: IconClass.workouts, label: TabBarLable.workouts),
             BottomNavigationBarItem(
-                icon: IconClass.cart, label: TabBarLable.cart),
+                icon: IconClass.activity, label: TabBarLable.activity),
             BottomNavigationBarItem(
-                icon: IconClass.profile, label: TabBarLable.profile),
+                icon: IconClass.programs, label: TabBarLable.programs),
           ],
         ),
         tabBuilder: (context, index) {
           late final CupertinoTabView returnValue;
           switch (index) {
             case 0:
-              returnValue = CupertinoTabView(builder: (context) => const HomePage());
+              returnValue =
+                  CupertinoTabView(builder: (context) => const HomePage());
               break;
             case 1:
-              returnValue = CupertinoTabView(builder: (context) => const SearchPage());
+              returnValue =
+                  CupertinoTabView(builder: (context) => const SearchPage());
               break;
             case 2:
-              returnValue = CupertinoTabView(builder: (context) => const CartPage());
+              returnValue =
+                  CupertinoTabView(builder: (context) => const CartPage());
               break;
             case 3:
-              returnValue = CupertinoTabView(builder: (context) => const ProfilePage());
+              returnValue =
+                  CupertinoTabView(builder: (context) => const ProfilePage());
               break;
           }
           return returnValue;
@@ -47,5 +51,3 @@ class DashBoardPage extends StatelessWidget {
 }
 
 enum TabItem { home, search, cart, profile }
-
-
