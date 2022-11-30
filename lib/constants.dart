@@ -31,6 +31,7 @@ abstract class TabBarLable {
 
 abstract class TabBarColors {
   static const Color activeColor = CupertinoColors.activeGreen;
+  static const Color primaryColor = Color(0xFF00BF6F);
   static const Color backgroundColor = Color(0xFF004f32);
   static const Color backgroundSecondaryColor = Color(0xFF79c141);
   static const Color blackColor = Color(0xFF1d1d1d);
@@ -46,6 +47,7 @@ abstract class CustomPaddings {
   static const EdgeInsets onlyLeft = EdgeInsets.only(left: 16);
   static const EdgeInsets onlyRight = EdgeInsets.only(right: 16);
   static const EdgeInsets onlyTopBottom = EdgeInsets.only(top: 16, bottom: 16);
+  static const EdgeInsets onlyTopBottom2 = EdgeInsets.only(top: 32, bottom: 32);
   static const EdgeInsets onlyLeftRight = EdgeInsets.only(left: 16, right: 16);
   static const EdgeInsets onlyTopLeft = EdgeInsets.only(top: 16, left: 16);
   static const EdgeInsets onlyTopRight = EdgeInsets.only(top: 16, right: 16);

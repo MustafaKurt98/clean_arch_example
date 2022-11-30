@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/foundation.dart' as foundation;
 import 'package:http/http.dart' as http;
 
@@ -10,6 +11,8 @@ class AppStateModel extends foundation.ChangeNotifier {
   List<Product> availableProducts = [];
   Category selectedCategory = Category.all;
   final _productsInCart = <int, int>{};
+  final CarouselController controller = CarouselController();
+  int current = 0;
 
   Category get getSelectedCategory => selectedCategory;
   Map<int, int> get productsInCart => Map.from(_productsInCart);
@@ -35,7 +38,18 @@ class AppStateModel extends foundation.ChangeNotifier {
   }
 
   List<String> carouselTrainingPhotos = [
-    
-    
+    "https://picsum.photos/id/237/200/300",
+    "https://picsum.photos/id/238/200/300",
+    "https://picsum.photos/id/239/200/300",
+    "https://picsum.photos/id/240/200/300",
+    "https://picsum.photos/id/241/200/300",
+    "https://picsum.photos/id/242/200/300",
+    "https://picsum.photos/id/243/200/300",
+    "https://picsum.photos/id/244/200/300",
   ];
+
+  changeIndicator(int index) {
+    current = index;
+    notifyListeners();
+  }
 }

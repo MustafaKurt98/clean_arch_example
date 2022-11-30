@@ -12,7 +12,7 @@ class DashBoardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
         tabBar: CupertinoTabBar(
-          activeColor: TabBarColors.activeColor,
+          activeColor: TabBarColors.primaryColor,
           inactiveColor: TabBarColors.inActiveColor,
           items: const [
             BottomNavigationBarItem(

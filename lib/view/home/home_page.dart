@@ -12,10 +12,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AppStateModel>(
       builder: (context, model, child) {
-        return CustomScrollView(
+        return const CustomScrollView(
           slivers: [
-            const CupertinoSliverNavigationBar(
+            CupertinoSliverNavigationBar(
               leading: CircleAvatar(
+                maxRadius: 15,
                 backgroundColor: TabBarColors.inActiveColor,
                 child: Text(
                   "MK",
@@ -27,31 +28,63 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SliverFillRemaining(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: CustomPaddings.onlyTop * 4,
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        aspectRatio: 0.8,
-                        autoPlayInterval: const Duration(seconds: 3),
-                        autoPlayAnimationDuration:
-                            const Duration(milliseconds: 800),
-                        autoPlayCurve: Curves.fastOutSlowIn,
-                        enlargeCenterPage: true,
-                        scrollDirection: Axis.horizontal,
-                      ),
-                      items: model.carouselTrainingPhotos
-                          .map((e) => Image.network(e))
-                          .toList(),
-                    ),
-                  ),
-                ],
-              ),
+              child: SliverCarousel(),
             ),
           ],
         );
       },
     );
+  }
+}
+
+class SliverCarousel extends StatelessWidget {
+  const SliverCarousel({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<AppStateModel>(builder: (context, model, child) {
+      return Column(
+        children: [
+          Padding(
+            padding: CustomPaddings.onlyTopBottom2,
+            child: CarouselSlider(
+              options: CarouselOptions(
+                aspectRatio: 0.9,
+                autoPlayInterval: const Duration(seconds: 3),
+                autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                enlargeCenterPage: true,
+                scrollDirection: Axis.horizontal,
+                onPageChanged: (index, reason) => model.changeIndicator(index),
+              ),
+              items: model.carouselTrainingPhotos
+                  .map((e) => Image.network(
+                        e,
+                        fit: BoxFit.cover,
+                      ))
+                  .toList(),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: model.carouselTrainingPhotos.asMap().entries.map((entry) {
+              return GestureDetector(
+                onTap: () => model.controller.animateToPage(entry.key),
+                child: Container(
+                  width: 12,
+                  height: 8,
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 8.0, horizontal: 4.0),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: TabBarColors.primaryColor
+                          .withOpacity(model.current == entry.key ? 1 : 0.3)),
+                ),
+              );
+            }).toList(),
+          ),
+        ],
+      );
+    });
   }
 }

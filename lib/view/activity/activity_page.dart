@@ -16,11 +16,11 @@ class _CartPageState extends State<CartPage> {
       return const CustomScrollView(
         slivers: [
           CupertinoSliverNavigationBar(
-            largeTitle: Text('Cart'),
+            largeTitle: Text('Aktivite'),
           ),
           SliverFillRemaining(
             child: Center(
-              child: Text('Cart Page'),
+              child: Text('Aktivite Sayfası'),
             ),
           ),
         ],
