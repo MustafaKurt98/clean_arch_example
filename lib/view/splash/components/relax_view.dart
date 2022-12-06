@@ -1,6 +1,5 @@
 import 'package:clean_arch_example/view/splash/components/icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class RelaxView extends StatelessWidget {
   final AnimationController animationController;

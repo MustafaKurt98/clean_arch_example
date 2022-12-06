@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../fitness_app/fitness_app_home_screen.dart';
 import 'components/care_view.dart';
 import 'components/center_next_button.dart';
 import 'components/mood_diary_vew.dart';
@@ -110,6 +111,7 @@ class IntroductionAnimationScreenState
   }
 
   void _signUpClick() {
-    Navigator.pop(context);
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const FitnessAppHomeScreen()));
   }
 }

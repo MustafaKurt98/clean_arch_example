@@ -1,8 +1,6 @@
 import 'package:clean_arch_example/constants.dart';
-import 'package:clean_arch_example/model/app_state_model.dart';
 import 'package:clean_arch_example/model/product.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
 
 class ProductRowItem extends StatelessWidget {
   const ProductRowItem(
@@ -51,7 +49,6 @@ class ProductRowItem extends StatelessWidget {
               semanticLabel: 'Add',
             ),
             onPressed: () {
-              final model = Provider.of<AppStateModel>(context, listen: false);
             },
           ),
         ],
