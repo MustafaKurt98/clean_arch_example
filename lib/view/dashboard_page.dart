@@ -34,7 +34,7 @@ class DashBoardPage extends StatelessWidget {
               break;
             case 1:
               returnValue =
-                  CupertinoTabView(builder: (context) => const SearchPage());
+                  CupertinoTabView(builder: (context) => const WorkoutPage());
               break;
             case 2:
               returnValue =

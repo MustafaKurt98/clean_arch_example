@@ -42,6 +42,8 @@ dependencies:
   shrine_images: ^2.0.1
   http: ^0.13.5
   carousel_slider: ^4.1.1
+  animations: ^2.0.7
+  flutter_svg: ^1.1.6
 
 dev_dependencies:
   flutter_test:
@@ -105,6 +107,8 @@ flutter:
     - packages/shrine_images/35-0.jpg
     - packages/shrine_images/36-0.jpg
     - packages/shrine_images/37-0.jpg
+    - assets/images/
+    - assets/SVG/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

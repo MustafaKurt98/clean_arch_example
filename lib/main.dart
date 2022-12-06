@@ -1,5 +1,6 @@
 import 'package:clean_arch_example/model/app_state_model.dart';
 import 'package:clean_arch_example/view/dashboard_page.dart';
+import 'package:clean_arch_example/view/splash/intro_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
     return const CupertinoApp(
       theme: CupertinoThemeData(brightness: Brightness.dark),
       debugShowCheckedModeBanner: false,
-      home: DashBoardPage(),
+      home: IntroductionAnimationScreen(),
     );
   }
 }
