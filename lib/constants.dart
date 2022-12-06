@@ -35,7 +35,8 @@ abstract class TabBarColors {
   static const Color backgroundColor = Color(0xFF004f32);
   static const Color backgroundSecondaryColor = Color(0xFF79c141);
   static const Color blackColor = Color(0xFF1d1d1d);
-  static const Color whiteColor = Color(0xFFf8f9fa);
+  static const Color whiteColor = Color(0xffe1ffeb);
+
   static const Color inActiveColor = CupertinoColors.inactiveGray;
 }
 
