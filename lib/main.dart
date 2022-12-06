@@ -1,5 +1,4 @@
 import 'package:clean_arch_example/model/app_state_model.dart';
-import 'package:clean_arch_example/view/dashboard_page.dart';
 import 'package:clean_arch_example/view/splash/intro_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';

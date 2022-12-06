@@ -99,14 +99,7 @@ class RelaxView extends StatelessWidget {
                 ),
               ),
               SlideTransition(
-                position: imageAnimation,
-                child: SvgPicture.asset(
-                  color: const Color(0xff004f32),
-                  width: 200,
-                  CustomIcons.pullups,
-                  fit: BoxFit.fill,
-                ),
-              ),
+                  position: imageAnimation, child: CustomIconsSVG.pullups),
             ],
           ),
         ),

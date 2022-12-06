@@ -1,3 +1,4 @@
+import 'package:clean_arch_example/view/splash/components/icons.dart';
 import 'package:flutter/material.dart';
 
 class CareView extends StatelessWidget {
@@ -84,13 +85,9 @@ class CareView extends StatelessWidget {
                 child: SlideTransition(
                   position: imageSecondHalfAnimation,
                   child: Container(
-                    constraints:
-                        const BoxConstraints(maxWidth: 350, maxHeight: 250),
-                    child: Image.asset(
-                      'assets/images/logo.png',
-                      fit: BoxFit.contain,
-                    ),
-                  ),
+                      constraints:
+                          const BoxConstraints(maxWidth: 350, maxHeight: 250),
+                      child: CustomIconsSVG.benchPress),
                 ),
               ),
               SlideTransition(

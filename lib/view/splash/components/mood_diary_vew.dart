@@ -1,3 +1,4 @@
+import 'package:clean_arch_example/view/splash/components/icons.dart';
 import 'package:flutter/material.dart';
 
 class MoodDiaryVew extends StatelessWidget {
@@ -102,12 +103,9 @@ class MoodDiaryVew extends StatelessWidget {
                 child: SlideTransition(
                   position: imageSecondHalfAnimation,
                   child: Container(
-                    constraints: const BoxConstraints(maxWidth: 350, maxHeight: 250),
-                    child: Image.asset(
-                      'assets/images/logo.png',
-                      fit: BoxFit.contain,
-                    ),
-                  ),
+                      constraints:
+                          const BoxConstraints(maxWidth: 350, maxHeight: 250),
+                      child: CustomIconsSVG.pilates),
                 ),
               ),
             ],
